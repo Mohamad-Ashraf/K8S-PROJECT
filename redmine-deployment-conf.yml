@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redmine-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redmine-deployment
+  template:
+    metadata:
+      labels:
+        app: redmine-deployment
+    spec:
+      containers:
+      - name: redmine-deployment
+        image: redmine
+        ports:
+        - containerPort: 3000
