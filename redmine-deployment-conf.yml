@@ -17,3 +17,14 @@ spec:
         image: redmine
         ports:
         - containerPort: 3000
+        env:
+          - name: REDMINE_DB_USERNAME
+            value: postgres
+          - name: REDMINE_DB_POSTGRES
+            value: 10.96.245.236
+          - name: REDMINE_DB_PORT
+            value: '5432'
+          - name: REDMINE_DB_DATABASE
+            value: postgres
+
+

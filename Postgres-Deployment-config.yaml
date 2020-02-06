@@ -17,3 +17,11 @@ spec:
           image: postgres
           ports:
             - containerPort: 5432
+          env:
+            - name: PGPORT
+              value: '5432'
+          #   - name: PGPASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: redminepassword
+          #         key: PGPASSWORD
