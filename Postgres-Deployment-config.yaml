@@ -12,6 +12,11 @@ spec:
       labels:
         db: postgres-deployment
     spec:
+      volumes:
+        - name: pvc-postgresdb
+          persistentVolumeClaim:
+              claimName: pvc-postgresdb
+
       containers:
         - name: postgres-deployment
           image: postgres
@@ -20,8 +25,7 @@ spec:
           env:
             - name: PGPORT
               value: '5432'
-          #   - name: PGPASSWORD
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: redminepassword
-          #         key: PGPASSWORD
+          volumeMounts:
+            - name: pvc-postgresdb
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres

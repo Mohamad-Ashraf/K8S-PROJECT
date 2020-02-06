@@ -21,7 +21,7 @@ spec:
           - name: REDMINE_DB_USERNAME
             value: postgres
           - name: REDMINE_DB_POSTGRES
-            value: 10.96.245.236
+            value: 10.96.108.1
           - name: REDMINE_DB_PORT
             value: '5432'
           - name: REDMINE_DB_DATABASE
