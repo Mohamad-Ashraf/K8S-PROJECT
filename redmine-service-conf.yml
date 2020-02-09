@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: redmine-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: redmine-deployment
   ports:
     - port: 3000
-      nodePort: 30000
       targetPort: 3000
